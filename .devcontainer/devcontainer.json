@@ -40,7 +40,9 @@
         },
 	},
 	"postCreateCommand": {
-        "Configure Build Tools": "npm install --global corepack@0.31.0 && corepack use pnpm@10.5.2 && pnpm install typescript@5.8.2"
+        "Configure Build Tools": "npm install --global corepack@0.31.0 && corepack use pnpm@10.5.2 && SHELL=bash pnpm setup",
+		"Project": "pnpm install typescript && rm -rf package.json pnpm-lock.yaml",
+		"Cleaning": "rm -rf package.json pnpm-lock.yaml"
 	}
     // "remoteUser": "node"
 
