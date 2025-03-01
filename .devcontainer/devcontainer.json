@@ -14,7 +14,8 @@
                         "icon": "terminal-bash"
                     }
                 }
-            }
+            },
+			"extensions": ["vivaxy.vscode-conventional-commits"]
 		}
 	},
     "features": {
@@ -39,10 +40,12 @@
             "version": "2.48.1"
         },
 	},
-	"postCreateCommand": {
-        "Configure Build Tools": "npm install --global corepack@0.31.0 && corepack use pnpm@10.5.2 && SHELL=bash pnpm setup",
-		"Project": "pnpm install typescript && rm -rf package.json pnpm-lock.yaml",
-		"Cleaning": "rm -rf package.json pnpm-lock.yaml"
+	"postCreateCommand": {	
+		"Install pnpm": "npm install --global corepack@0.31.0 && corepack use pnpm@10.5.2 && SHELL=bash pnpm setup",
+		"Install typescript": "pnpm install typescript",
+	},
+	"postStartCommand": {
+		"CleanUp": "rm -rf package.json pnpm-lock.yaml",
 	}
     // "remoteUser": "node"
 
