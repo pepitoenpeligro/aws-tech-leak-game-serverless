@@ -2,8 +2,9 @@
 	"name": "aws-tech-leak-game-serverless-devcontainer",
     "image": "mcr.microsoft.com/devcontainers/base:bookworm",
 	"mounts": [
-		"source=${localWorkspaceFolder},target=/devcontainermounted,type=bind,consistency=cached"
+		"source=${localWorkspaceFolder},target=/devcontainermounted,type=bind,consistency=cached",
 	],
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
     "customizations": {
 		"vscode": {
 			"settings": {
@@ -34,18 +35,22 @@
 			"version": "2.24.14"
 		},
 		"ghcr.io/devcontainers-extra/features/aws-cdk:2": {
-			"version": "2.1001.0"
+			"version": "2.1003.0"
 		},
 		"ghcr.io/devcontainers/features/git:1": {
             "version": "2.48.1"
         },
 	},
-	"postCreateCommand": {	
-		"Install pnpm": "npm install --global corepack@0.31.0 && corepack use pnpm@10.5.2 && SHELL=bash pnpm setup",
-		"Install typescript": "pnpm install typescript",
+	"remoteEnv": {
+		"PNPM_HOME": "/home/vscode/.local/share/pnpm",
+		"SHELL": "/bin/bash"
 	},
+	"postCreateCommand": {
+		"Install pnpm": "npm install --global corepack@0.31.0 && corepack use pnpm@10.5.2 && SHELL=bash pnpm setup",
+		"Install typescript": "PNPM_HOME=\"$HOME/.local/share/pnpm\" && PATH=\"$PNPM_HOME:$PATH\" pnpm -g install @angular/cli@19.2.0"
+	},	
 	"postStartCommand": {
-		"CleanUp": "rm -rf package.json pnpm-lock.yaml",
+		"CleanUp": "rm -rf package.json pnpm-lock.yaml"
 	}
     // "remoteUser": "node"
 
