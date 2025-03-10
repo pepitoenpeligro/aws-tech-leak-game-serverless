@@ -7,7 +7,7 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"ignore": []
+		"ignore": [".projen/tasks.json", ".projen/deps.json", ".eslintrc.json", "tsconfig.json", "cdk.json"]
 	},
 	"formatter": {
 		"enabled": true,

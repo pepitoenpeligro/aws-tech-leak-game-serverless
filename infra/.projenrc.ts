@@ -16,13 +16,4 @@ const project = new awscdk.AwsCdkConstructLibrary({
 	// packageName: undefined,  /* The "name" in package.json. */
 });
 
-const hello = project.addTask('hello', {
-	description: 'say hello',
-	exec: 'echo hello, world!',
-});
-
-const format = project.addTask('fmt', {
-	exec: 'pnpm biome format --write',
-});
-
 project.synth();
