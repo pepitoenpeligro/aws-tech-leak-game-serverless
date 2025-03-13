@@ -1,14 +1,14 @@
 name: 🚀 Infra Deployment
 
 on:
-  workflow_call:
+  workflow_dispatch:
     inputs:
       environment:
         description: 'AWS Environment'
         required: true
         default: 'dev'
         type: string
-    stack-name:
+      stack-name:
         description: 'Enter the stack name.'
         required: false
         default: ''
