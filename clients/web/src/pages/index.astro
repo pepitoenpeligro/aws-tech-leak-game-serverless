@@ -1,0 +1,16 @@
+---
+// Server Only
+import MainLayout from '../layouts/MainLayout.astro';
+
+const name = 'pepitoenpeligro';
+
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+
+<MainLayout title="index">
+	<p>Momento Actual: {new Date().toLocaleTimeString()}</p>
+</MainLayout>
+

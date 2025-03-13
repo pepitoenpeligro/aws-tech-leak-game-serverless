@@ -1,0 +1,12 @@
+---
+import Navbar from "../components/Navbar.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import { Amplify } from 'aws-amplify';
+
+import awsconfig from '../../aws-exports';
+Amplify.configure(awsconfig);
+---
+
+<MainLayout title="auth">
+	<p>Auth</p>
+</MainLayout>
