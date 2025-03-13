@@ -4,9 +4,14 @@ on:
   workflow_dispatch:
     inputs:
       environment:
-        description: 'AWS Environment'
+        description: 'Environment dev or pro'
         required: true
         default: 'dev'
+        type: string
+      branch-to-deploy:
+        description: 'Branch to deploy'
+        required: true
+        default: 'main'
         type: string
       stack-name:
         description: 'Enter the stack name.'
@@ -25,9 +30,12 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branch-to-deploy }}
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
