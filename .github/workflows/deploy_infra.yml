@@ -59,6 +59,7 @@ jobs:
         with:
           node-version: 22.14.0
           cache: 'pnpm'
+          cache-dependency-path: './infra/pnpm-lock.yaml'
 
       - name: Install CDK CLI
         run: |
