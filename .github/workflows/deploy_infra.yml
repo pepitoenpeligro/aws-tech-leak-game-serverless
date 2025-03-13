@@ -44,15 +44,25 @@ jobs:
           aws-region: 'eu-west-1'
           role-session-name: GitHubActions
           role-to-assume: ${{ secrets.AWS_GITHUB_TECH_LEAK_ROLE_ARN }}
+      
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 22.14.0
+          cache: 'pnpm'
 
-      - name: Install CDK
+      - name: Install CDK CLI
         run: |
-          npm install -g aws-cdk@${{ env.AWS_CDK_CLI_VERSION}}
+          pnpm install -g aws-cdk@${{ env.AWS_CDK_CLI_VERSION}}
+
+      - name: Install CDK project dependencies
+        run: |
+          pnpm install
 
       - name: CDK deploy
         working-directory: infra
