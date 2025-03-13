@@ -1,0 +1,53 @@
+name: 🚀 Infra Deployment
+
+on:
+  workflow_call:
+    inputs:
+      environment:
+        description: 'AWS Environment'
+        required: true
+        default: 'dev'
+        type: string
+    stack-name:
+        description: 'Enter the stack name.'
+        required: false
+        default: ''
+        type: string
+
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  AWS_CDK_CLI_VERSION: 2.1003.0
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          audience: 'sts.amazonaws.com'
+          aws-region: 'eu-west-1'
+          role-session-name: GitHubActions
+          role-to-assume: ${{ secrets.AWS_GITHUB_TECH_LEAK_ROLE_ARN }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.14.0
+
+      - name: Install CDK
+        run: |
+          npm install -g aws-cdk@${{ env.AWS_CDK_CLI_VERSION}}
+
+      - name: CDK deploy
+        working-directory: infra
+        run: |
+          ls -la
+          cdk deploy ${{ inputs.stack-name }} --require-approval never -vvv
