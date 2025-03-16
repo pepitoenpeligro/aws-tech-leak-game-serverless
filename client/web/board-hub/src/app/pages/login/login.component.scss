@@ -1,0 +1,18 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-size: cover;
+  animation: backgroundAnimation 10s infinite alternate;
+  text-align: center;
+}
+
+mat-card {
+  width: 400px;
+}
+
+.icon {
+  vertical-align: middle;
+  margin-right: 10px;
+}
