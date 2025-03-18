@@ -35,6 +35,12 @@ importers:
       '@angular/router':
         specifier: ^19.2.0
         version: 19.2.0(@angular/common@19.2.0(@angular/core@19.2.0(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.2.0(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@19.2.0(@angular/common@19.2.0(@angular/core@19.2.0(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.2.0(rxjs@7.8.2)(zone.js@0.15.0)))(rxjs@7.8.2)
+      lottie-web:
+        specifier: ^5.12.2
+        version: 5.12.2
+      ngx-lottie:
+        specifier: ^13.0.1
+        version: 13.0.1(@angular/core@19.2.0(rxjs@7.8.2)(zone.js@0.15.0))(lottie-web@5.12.2)
       rxjs:
         specifier: ~7.8.0
         version: 7.8.2
@@ -1666,6 +1672,9 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@scarf/scarf@1.4.0':
+    resolution: {integrity: sha512-xxeapPiUXdZAE3che6f3xogoJPeZgig6omHEy1rIY5WVsB3H2BHNnZH+gHG6x91SCWyQCzWGsuL2Hh3ClO5/qQ==}
+
   '@schematics/angular@19.2.0':
     resolution: {integrity: sha512-/gdrYTr1DSUNmrUmpmne6uBnIBpJ/obHtccvz5sZckKni/KMPAr3CgGZ8JrHer3I732ucb1We9nbdtXvz+2glg==}
     engines: {node: ^18.19.1 || ^20.11.1 || >=22.0.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: '>= 1.13.0'}
@@ -3067,6 +3076,9 @@ packages:
     resolution: {integrity: sha512-1somDdy9sChrr9/f4UlzhdaGfDR2c/SaD2a4T7qEkG4jTS57/B3qmnjLYePwQ8cqWnUHZI0iAKxMBpCZICiZ2g==}
     engines: {node: '>=8.0'}
 
+  lottie-web@5.12.2:
+    resolution: {integrity: sha512-uvhvYPC8kGPjXT3MyKMrL3JitEAmDMp30lVkuq/590Mw9ok6pWcFCwXJveo0t5uqYw1UREQHofD+jVpdjBv8wg==}
+
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
 
@@ -3274,6 +3286,12 @@ packages:
 
   neo-async@2.6.2:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
+
+  ngx-lottie@13.0.1:
+    resolution: {integrity: sha512-QHKYoRClFZMqA+idU78pE8QZh6Cenv6WCMHHhcNk9ZExDxTL8VgFmrcXby1uQQxn2+bD1kHBTuFIMckMkYiUBQ==}
+    peerDependencies:
+      '@angular/core': '>=19'
+      lottie-web: '>=5.9.2'
 
   node-addon-api@6.1.0:
     resolution: {integrity: sha512-+eawOlIgy680F0kBzPUNFhMZGtJ1YmqM6l4+Crf4IkImjYrO/mqPwRMh352g23uIaQKFItcQ64I7KMaJxHgAVA==}
@@ -5922,6 +5940,8 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.34.8':
     optional: true
 
+  '@scarf/scarf@1.4.0': {}
+
   '@schematics/angular@19.2.0(chokidar@4.0.3)':
     dependencies:
       '@angular-devkit/core': 19.2.0(chokidar@4.0.3)
@@ -7511,6 +7531,8 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  lottie-web@5.12.2: {}
+
   lru-cache@10.4.3: {}
 
   lru-cache@5.1.1:
@@ -7702,6 +7724,13 @@ snapshots:
   negotiator@1.0.0: {}
 
   neo-async@2.6.2: {}
+
+  ngx-lottie@13.0.1(@angular/core@19.2.0(rxjs@7.8.2)(zone.js@0.15.0))(lottie-web@5.12.2):
+    dependencies:
+      '@angular/core': 19.2.0(rxjs@7.8.2)(zone.js@0.15.0)
+      '@scarf/scarf': 1.4.0
+      lottie-web: 5.12.2
+      tslib: 2.8.1
 
   node-addon-api@6.1.0:
     optional: true
