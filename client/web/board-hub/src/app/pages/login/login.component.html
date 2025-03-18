@@ -34,5 +34,6 @@
       <input-bh labelInput="Password" placeholderInput="Enter your password" type="password"></input-bh>
     </mat-card-content>
     <button-bh label="Login" (buttonClick)="onLoginClick()"></button-bh>
+    <spinner-bh *ngIf="showSpinner" [spinnerAnimation]="dadoAnimado"></spinner-bh>
   </mat-card>
 </div>
