@@ -1,0 +1,13 @@
+::ng-deep .mat-mdc-form-field .mdc-text-field {
+  background-color: #f5f5f5; // Color de fondo gris claro
+  border-radius: 15px; // Bordes redondeados más sutiles
+  border: 2px solid #bdbdbd; // Añadir borde alrededor del input
+}
+
+::ng-deep .mat-mdc-form-field .mdc-notched-outline {
+  display: none; // Quitar la línea debajo del input
+}
+
+::ng-deep .mat-mdc-form-field .mdc-floating-label {
+  color: #757575; // Color de la etiqueta gris oscuro
+}

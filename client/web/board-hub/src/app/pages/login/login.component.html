@@ -1,0 +1,51 @@
+<div class="login-container">
+  <div class="background">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title class="title">
+        <mat-icon class="icon">games</mat-icon>
+        Board Hub
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="loginForm">
+        <!-- Username Input -->
+        <input-bh labelInput="Username" placeholderInput="Enter your username" formControlName="username"></input-bh>
+        <div class="error-container">
+          <mat-error [ngClass]="{'visible': username?.invalid && username?.touched}">
+            {{ getUsernameErrorMessage() }}
+          </mat-error>
+        </div>
+
+        <!-- Password Input -->
+        <input-bh labelInput="Password" placeholderInput="Enter your password" type="password" formControlName="password"></input-bh>
+        <div class="error-container">
+          <mat-error [ngClass]="{'visible': password?.invalid && password?.touched}">
+            {{ getPasswordErrorMessage() }}
+          </mat-error>
+        </div>
+      </form>
+    </mat-card-content>
+
+    <button-bh label="Login" (buttonClick)="onLoginClick()"></button-bh>
+    <spinner-bh *ngIf="showSpinner" [spinnerAnimation]="dadoAnimado"></spinner-bh>
+  </mat-card>
+</div>
