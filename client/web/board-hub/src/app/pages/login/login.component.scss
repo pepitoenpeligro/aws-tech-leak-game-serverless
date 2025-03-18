@@ -51,7 +51,6 @@ mat-card {
     animation-iteration-count: infinite;
 }
 
-
 .background span:nth-child(0) {
     color: #77bb41;
     top: 50%;
@@ -222,5 +221,24 @@ mat-card {
     animation-delay: -189s;
     transform-origin: 15vw -9vh;
     box-shadow: 32vmin 0 4.732511543390836vmin currentColor;
+}
+
+.error-container {
+  height: 25px;
+  margin-top: 0px;
+}
+
+mat-error {
+    display: block;
+    color: red;
+    font-size: 15px;
+    transform: translateY(-10px);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+    &.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
